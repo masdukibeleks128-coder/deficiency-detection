@@ -5,3 +5,4 @@ plotly
 torch
 torchvision
 ultralytics
+opencv-python-headless
