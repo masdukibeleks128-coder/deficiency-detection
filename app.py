@@ -9,17 +9,21 @@ import plotly.graph_objects as go
 import os
 import tempfile
 import shutil
-
+import importlib.util
 # import YOLO
 
-try:
+def cek_library_ultralytics():
+    spec = importlib.util.find_spec("ultralytics")
+    if spec is None :
+        return False
+    return True
+
+YOLO_AVAILABLE = cek_library_ultralytics()
+
+if YOLO_AVAILABLE :
     from ultralytics import YOLO
-    YOLO_AVAILABLE = True
-except ImportError:
-    YOLO_AVAILABLE = False
 
 st.set_page_config(page_title="pengenalan defisiensi")
-
 # periksa apakah library YOLO tersedia
 def cek_library():
     if not YOLO_AVAILABLE:
@@ -111,5 +115,6 @@ st.markdown(
 "<div style='text-align: center;' class='footer'>Program Aplikasi detekdi defisiensi hara @2025</div>",
 unsafe_allow_html=True
 )
+
 
                     
