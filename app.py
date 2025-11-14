@@ -24,6 +24,22 @@ if YOLO_AVAILABLE :
     from ultralytics import YOLO
 
 st.set_page_config(page_title="pengenalan defisiensi")
+st.set_page_config(layout="wide")
+
+# CSS untuk background
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background-image: ("backgorund.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+</style>
+"""
+
+st.markdown(page_bg, unsafe_allow_html=True)
+
 # periksa apakah library YOLO tersedia
 def cek_library():
     if not YOLO_AVAILABLE:
@@ -118,4 +134,5 @@ unsafe_allow_html=True
 
 
                     
+
 
