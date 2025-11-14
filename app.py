@@ -23,10 +23,8 @@ YOLO_AVAILABLE = cek_library_ultralytics()
 if YOLO_AVAILABLE :
     from ultralytics import YOLO
 
-st.set_page_config(page_title="pengenalan defisiensi")
-st.set_page_config(layout="wide")
-
-import streamlit as st
+st.set_page_config(page_title="pengenalan defisiensi",
+                   layout="wide")
 
 bg_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/background.jpeg"
 
@@ -141,6 +139,7 @@ unsafe_allow_html=True
 
 
                     
+
 
 
 
