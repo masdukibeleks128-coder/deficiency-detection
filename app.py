@@ -26,19 +26,26 @@ if YOLO_AVAILABLE :
 st.set_page_config(page_title="pengenalan defisiensi")
 st.set_page_config(layout="wide")
 
-# CSS untuk background
-page_bg = """
+import streamlit as st
+
+bg_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/background.jpeg"
+
+page_bg = f"""
 <style>
-[data-testid="stAppViewContainer"] {
-    background-image: ("background.jpeg");
+[data-testid="stAppViewContainer"] {{
+    background-image: url("{bg_url}");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
+}}
 </style>
 """
 
 st.markdown(page_bg, unsafe_allow_html=True)
+
+st.title("Website dengan Background dari GitHub")
+st.write("Contoh penggunaan background.")
+
 
 # periksa apakah library YOLO tersedia
 def cek_library():
@@ -134,6 +141,7 @@ unsafe_allow_html=True
 
 
                     
+
 
 
 
