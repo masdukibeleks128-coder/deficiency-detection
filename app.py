@@ -30,7 +30,7 @@ st.set_page_config(layout="wide")
 page_bg = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background-image: ("backgorund.jpeg");
+    background-image: ("background.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -134,5 +134,6 @@ unsafe_allow_html=True
 
 
                     
+
 
 
