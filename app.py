@@ -41,10 +41,6 @@ page_bg = f"""
 
 st.markdown(page_bg, unsafe_allow_html=True)
 
-st.title("Website dengan Background dari GitHub")
-st.write("Contoh penggunaan background.")
-
-
 # periksa apakah library YOLO tersedia
 def cek_library():
     if not YOLO_AVAILABLE:
@@ -55,7 +51,7 @@ def cek_library():
 
 st.markdown("""
 <div style="
-            background-color: rgba(8, 71, 5, 0.7);
+            background-color: rgba(69, 75, 27, 0.7);
             padding: 20px;
             text-align: center;">
 <h1 style="color: white;"> NUTRISCAN </h1>
@@ -142,6 +138,7 @@ unsafe_allow_html=True
 
 
                     
+
 
 
 
