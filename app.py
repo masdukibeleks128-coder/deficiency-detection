@@ -54,7 +54,10 @@ def cek_library():
     return True
 
 st.markdown("""
-<div style="background-color:#000080; padding: 20px; text-align: center;">
+<div style="
+            background-color: rgba(8, 71, 5, 0.4);
+            padding: 20px;
+            text-align: center;">
 <h1 style="color: white;"> NUTRISCAN </h1>
 <h5 style="color: white;"> Maize Nutrient Scanner</h5>
 </div>
@@ -139,6 +142,7 @@ unsafe_allow_html=True
 
 
                     
+
 
 
 
