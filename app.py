@@ -34,8 +34,8 @@ def cek_library():
 
 st.markdown("""
 <div style="background-color:#000080; padding: 20px; text-align: center;">
-<h1 style="color: white;"> program pengenalan gambar </h1>
-<h5 style="color: white;"> Deteksi defisiensi Hara</h5>
+<h1 style="color: white;"> NUTRISCAN </h1>
+<h5 style="color: white;"> Maize Nutrient Scanner</h5>
 </div>
 """, unsafe_allow_html=True)
 
@@ -112,9 +112,10 @@ if cek_library():
                 shutil.rmtree(temp_dir,ignore_errors=True)
 
 st.markdown(
-"<div style='text-align: center;' class='footer'>Program Aplikasi detekdi defisiensi hara @2025</div>",
+"<div style='text-align: center;' class='footer'>Program MBKM Riset @2025</div>",
 unsafe_allow_html=True
 )
 
 
                     
+
