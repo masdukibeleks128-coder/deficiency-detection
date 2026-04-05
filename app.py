@@ -78,7 +78,7 @@ if cek_library():
         image = Image.open(uploaded_file)
 
         #resize ukuran gambar
-        image = image.resize((640,640))
+        image = image.resize((300,300))
         image.save(temp_file)
     
         #show picture
