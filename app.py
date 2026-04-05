@@ -32,6 +32,7 @@ st.set_page_config(page_title="pengenalan defisiensi",
 
 bg_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/background.jpeg"
 
+# Background dari website
 page_bg = f"""
 <style>
 [data-testid="stAppViewContainer"] {{
@@ -53,6 +54,7 @@ def cek_library():
         return False
     return True
 
+# text tulisan utama
 st.markdown("""
 <div style="
             background-color: rgba(69, 75, 27, 0.7);
