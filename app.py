@@ -74,11 +74,11 @@ if cek_library():
         image = Image.open(uploaded_file)
 
         #resize ukuran gambar
-        image = image.resize((300,300))
+        image = image.resize((640,640))
         image.save(temp_file)
     
         #show picture
-        st.markdown("<div style='text-align: center,'>", unsafe_allow_html=True)
+        st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
         st.image(image, caption="gambar yang diupload")
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -86,6 +86,8 @@ if cek_library():
         if st.button("Deteksi gambar"):
             with st.spinner("sedang diproses"):
                 try:
+                     # Pastikan safe globals terdaftar tepat sebelum load
+                    torch.serialization.add_safe_globals([DetectionModel])
                     model = YOLO('best.pt')
                     hasil = model(temp_file)
 
@@ -133,7 +135,8 @@ if cek_library():
                     st.error(f"Error:{e}")
 
                 #hapus file sementara
-                shutil.rmtree(temp_dir,ignore_errors=True)
+                finally:
+                    shutil.rmtree(temp_dir,ignore_errors=True)
 
 st.markdown(
 "<div style='text-align: center;' class='footer'>Program Skripsi @2026</div>",
