@@ -67,7 +67,9 @@ st.markdown("""
 
 #cek library
 if cek_library():
-    uploaded_file = st.file_uploader("Upload your picture", type=['jpg','jpeg','png'])
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        uploaded_file = st.file_uploader("Upload your picture", type=['jpg','jpeg','png'])
 
     if uploaded_file: 
         #temporary files
