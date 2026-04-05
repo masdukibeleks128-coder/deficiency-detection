@@ -1,8 +1,8 @@
 streamlit
 pillow
-numpy==1.26.4
+numpy
 plotly
 torch==2.5.1
-torchvision
+torchvision=0.21.0
 ultralytics
 opencv-python-headless==4.9.0.80
