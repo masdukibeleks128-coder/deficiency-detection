@@ -132,7 +132,7 @@ if cek_library():
                 shutil.rmtree(temp_dir,ignore_errors=True)
 
 st.markdown(
-"<div style='text-align: center;' class='footer'>Program MBKM Riset @2025</div>",
+"<div style='text-align: center;' class='footer'>Program Skripsi @2026</div>",
 unsafe_allow_html=True
 )
 
