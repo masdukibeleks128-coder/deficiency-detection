@@ -22,6 +22,10 @@ YOLO_AVAILABLE = cek_library_ultralytics()
 
 if YOLO_AVAILABLE :
     from ultralytics import YOLO
+    import torch
+    from ultralytics.nn.tasks import DetectionModel
+    
+    torch.serialization.add_safe_globals([DetectionModel])
 
 st.set_page_config(page_title="pengenalan defisiensi",
                    layout="wide")
