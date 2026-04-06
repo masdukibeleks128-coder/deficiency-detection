@@ -65,7 +65,7 @@ st.markdown(f"""
             margin-top: 30px;">
     <div style="
             position: absolute;
-            top: -20px;
+            top: -40px;
             left: -10px;
             background-color: white;
             width: 180px;
