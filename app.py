@@ -68,8 +68,8 @@ st.markdown(f"""
             top: -20px;
             left: -10px;
             background-color: white;
-            width: 130px;
-            height: 40px;
+            width: 180px;
+            height: 80px;
             border-radius: 15px;
             display: flex;
             align-items: center:
