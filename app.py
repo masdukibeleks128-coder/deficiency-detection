@@ -31,8 +31,8 @@ st.set_page_config(page_title="pengenalan defisiensi",
                    layout="wide")
 
 bg_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/background.jpeg"
-logo_utm_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/UTM.png" 
-logo_fp_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/Agriculture-Logo.png"
+logo_utm_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/logo/logo utm 300 px.png" 
+logo_fp_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/logo/logo FP 300px.png"
 # Background dari website
 page_bg = f"""
 <style>
@@ -65,13 +65,13 @@ st.markdown(f"""
 <img src="{logo_utm_url}" style="
     position: absolute;
     top: 15px;
-    right: 15px;
-    width: 80px;">
+    left: 15px;
+    width: 60px;">
 <img src="{logo_fp_url}" style="
     position: absolute;
     top: 15px;
-    right: 100px;
-    width: 80px;">
+    left: 100px;
+    width: 60px;">
 <h1 style="color: white;"> NUTRISCAN </h1>
 <h5 style="color: white;"> Maize Nutrient Scanner</h5>
 </div>
