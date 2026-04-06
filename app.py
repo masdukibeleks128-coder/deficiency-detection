@@ -60,7 +60,6 @@ st.markdown(f"""
 <div style="
             background-color: rgba(69, 75, 27, 0.7);
             padding: 20px;
-            border-radius: 15px:
             text-align: center;
             position: relative;
             margin-top: 30px;">
