@@ -70,7 +70,7 @@ st.markdown(f"""
             background-color: white;
             width: 160px;
             height: 75px;
-            border-radius: 30px;
+            border-radius: 40px;
             display: flex;
             align-items: center:
             justify-content: center;">
@@ -78,7 +78,7 @@ st.markdown(f"""
 <img src="{logo_utm_url}" style="
     position: absolute;
     top: -25px;
-    left: 5px;
+    left: 10px;
     width: 50px;">
 <img src="{logo_fp_url}" style="
     position: absolute;
