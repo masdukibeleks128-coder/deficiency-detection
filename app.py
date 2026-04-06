@@ -31,8 +31,8 @@ st.set_page_config(page_title="pengenalan defisiensi",
                    layout="wide")
 
 bg_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/background.jpeg"
-logo_utm_url = "" 
-logo_fp_url = ""
+logo_utm_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/UTM.png" 
+logo_fp_url = "https://raw.githubusercontent.com/masdukibeleks128-coder/deficiency-detection/main/Agriculture-Logo.png"
 # Background dari website
 page_bg = f"""
 <style>
