@@ -77,12 +77,12 @@ st.markdown(f"""
     </div>
 <img src="{logo_utm_url}" style="
     position: absolute;
-    top: -35px;
+    top: -37px;
     left: 5px;
     width: 50px;">
 <img src="{logo_fp_url}" style="
     position: absolute;
-    top: -35px;
+    top: -37px;
     left: 75px;
     width: 50px;">
 <h1 style="color: white;"> NUTRISCAN </h1>
