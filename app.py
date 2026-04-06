@@ -77,7 +77,7 @@ st.markdown(f"""
     </div>
 <img src="{logo_utm_url}" style="
     position: absolute;
-    top: -37px;
+    top: -25px;
     left: 5px;
     width: 50px;">
 <img src="{logo_fp_url}" style="
