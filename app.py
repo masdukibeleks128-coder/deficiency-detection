@@ -69,19 +69,21 @@ st.markdown("""
 if cek_library():
         uploaded_file = st.file_uploader("Upload your picture", type=['jpg','jpeg','png'])
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("Gambar Asli")
-        st.image(image, use_column_width=True)
-
-    with col2:
-        st.subheader("Hasil Deteksi")
-
     if uploaded_file: 
         #temporary files
         temp_dir = tempfile.mkdtemp()
         temp_file = os.path.join(temp_dir, "gambar.jpg")
         image = Image.open(uploaded_file)
+
+        # Buat 2 kolom untuk perbandingan  
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.subheader("Gambar Asli")
+            st.image(image, use_column_width=True)
+
+        with col2:
+            st.subheader("Hasil Deteksi")
 
         #resize ukuran gambar
         image = image.resize((300,300))
