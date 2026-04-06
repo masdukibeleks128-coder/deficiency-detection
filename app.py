@@ -67,9 +67,15 @@ st.markdown("""
 
 #cek library
 if cek_library():
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
         uploaded_file = st.file_uploader("Upload your picture", type=['jpg','jpeg','png'])
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col1:
+        st.subheader("Gambar Asli")
+        st.image(image, use_column_width=True)
+
+    with col2:
+        st.subheader("Hasil Deteksi")
 
     if uploaded_file: 
         #temporary files
