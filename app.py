@@ -61,7 +61,20 @@ st.markdown(f"""
             background-color: rgba(69, 75, 27, 0.7);
             padding: 20px;
             text-align: center;
-            position: relative;">
+            position: relative;
+            margin-top: 30px;">
+    <div style="
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            background-color: white;
+            width: 130px;
+            height: 40px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center:
+            justify-content: center;">
+    </div>
 <img src="{logo_utm_url}" style="
     position: absolute;
     top: 15px;
