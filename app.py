@@ -69,7 +69,7 @@ st.markdown("""
 if cek_library():
         uploaded_file = st.file_uploader("Upload your picture", type=['jpg','jpeg','png'])
 
-    col1, col2, col3 = st.columns(2)
+    col1, col2 = st.columns(2)
     with col1:
         st.subheader("Gambar Asli")
         st.image(image, use_column_width=True)
