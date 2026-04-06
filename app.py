@@ -56,12 +56,12 @@ def cek_library():
     return True
 
 # text tulisan utama
-st.markdown("""
+st.markdown(f"""
 <div style="
             background-color: rgba(69, 75, 27, 0.7);
             padding: 20px;
             text-align: center;
-            position; relative;">
+            position: relative;">
 <img src="{logo_utm_url}" style="
     position: absolute;
     top: 15px;
