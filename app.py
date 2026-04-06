@@ -65,11 +65,11 @@ st.markdown(f"""
             margin-top: 30px;">
     <div style="
             position: absolute;
-            top: -40px;
+            top: -37px;
             left: -10px;
             background-color: white;
-            width: 180px;
-            height: 80px;
+            width: 160px;
+            height: 75px;
             border-radius: 30px;
             display: flex;
             align-items: center:
