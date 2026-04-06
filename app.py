@@ -69,76 +69,76 @@ st.markdown("""
 if cek_library():
         uploaded_file = st.file_uploader("Upload your picture", type=['jpg','jpeg','png'])
 
-    if uploaded_file: 
-        #temporary files
-        temp_dir = tempfile.mkdtemp()
-        temp_file = os.path.join(temp_dir, "gambar.jpg")
-        image = Image.open(uploaded_file)
+        if uploaded_file: 
+            #temporary files
+            temp_dir = tempfile.mkdtemp()
+            temp_file = os.path.join(temp_dir, "gambar.jpg")
+            image = Image.open(uploaded_file)
 
-        #resize ukuran gambar
-        image = image.resize((300,300))
-        image.save(temp_file)
+            #resize ukuran gambar
+            image = image.resize((300,300))
+            image.save(temp_file)
     
-        #show picture
-        st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-        st.image(image, caption="gambar yang diupload")
-        st.markdown("</div>", unsafe_allow_html=True)
+            #show picture
+            st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+            st.image(image, caption="gambar yang diupload")
+            st.markdown("</div>", unsafe_allow_html=True)
 
-        #deteksi gambar
-        if st.button("Deteksi gambar"):
-            with st.spinner("sedang diproses"):
-                try:
-                     # Pastikan safe globals terdaftar tepat sebelum load
-                    torch.serialization.add_safe_globals([DetectionModel])
-                    model = YOLO('best.pt')
-                    hasil = model(temp_file)
+            #deteksi gambar
+            if st.button("Deteksi gambar"):
+                with st.spinner("sedang diproses"):
+                    try:
+                        # Pastikan safe globals terdaftar tepat sebelum load
+                        torch.serialization.add_safe_globals([DetectionModel])
+                        model = YOLO('best.pt')
+                        hasil = model(temp_file)
 
-                    # Ambil semua nama kelas dari model
-                    nama_kelas = hasil[0].names
-                    semua_kelas = list(nama_kelas.values())
-                    confidence_dict = {nama: 0.0 for nama in semua_kelas}
+                        # Ambil semua nama kelas dari model
+                        nama_kelas = hasil[0].names
+                        semua_kelas = list(nama_kelas.values())
+                        confidence_dict = {nama: 0.0 for nama in semua_kelas}
                     
-                    # Pastikan ada hasil deteksi
-                    if len(hasil[0].boxes) == 0:
-                         st.error("Gambar tidak dapat terdeteksi oleh model.")
-                    else:
-                        # Ambil hasil deteksi
-                        boxes = hasil[0].boxes
+                        # Pastikan ada hasil deteksi
+                          if len(hasil[0].boxes) == 0:
+                             st.error("Gambar tidak dapat terdeteksi oleh model.")
+                        else:
+                            # Ambil hasil deteksi
+                            boxes = hasil[0].boxes
 
-                        # Ambil daftar nama kelas dan confidence
-                        class_ids = boxes.cls.cpu().numpy().astype(int)
-                        confidences = boxes.conf.cpu().numpy()
+                            # Ambil daftar nama kelas dan confidence
+                            class_ids = boxes.cls.cpu().numpy().astype(int)
+                            confidences = boxes.conf.cpu().numpy()
 
-                        # Isi confidence tertinggi untuk setiap kelas yang muncul
-                        for cls_id, conf in zip(class_ids, confidences):
-                            nama = nama_kelas[cls_id]
-                            if conf > confidence_dict[nama]:
-                                confidence_dict[nama] = float(conf)
+                            # Isi confidence tertinggi untuk setiap kelas yang muncul
+                            for cls_id, conf in zip(class_ids, confidences):
+                                nama = nama_kelas[cls_id]
+                                if conf > confidence_dict[nama]:
+                                    confidence_dict[nama] = float(conf)
 
-                        # cari kelas dengan confidence tertinggi
-                        objek_terdeteksi = max(confidence_dict, key=confidence_dict.get)
+                            # cari kelas dengan confidence tertinggi
+                            objek_terdeteksi = max(confidence_dict, key=confidence_dict.get)
 
-                        # Buat grafik keyakinan
-                        grafik = go.Figure([go.Bar(x=list(confidence_dict.keys()), y=list(confidence_dict.values()))])
-                        grafik.update_layout(title='Tingkat Keyakinan Deteksi',
-                                             xaxis_title='Defisiensi Hara',
-                                             yaxis_title='Tingkat keyakinan')
+                            # Buat grafik keyakinan
+                            grafik = go.Figure([go.Bar(x=list(confidence_dict.keys()), y=list(confidence_dict.values()))])
+                            grafik.update_layout(title='Tingkat Keyakinan Deteksi',
+                                                 xaxis_title='Defisiensi Hara',
+                                                 yaxis_title='Tingkat keyakinan')
 
-                        # Tampilkan hasil
-                        st.success(f"Defisiensi terdeteksi: {objek_terdeteksi}")
-                        st.plotly_chart(grafik)
+                            # Tampilkan hasil
+                            st.success(f"Defisiensi terdeteksi: {objek_terdeteksi}")
+                            st.plotly_chart(grafik)
     
-                        # Tampilkan gambar hasil deteksi
-                        st.image(hasil[0].plot(), caption="Hasil Deteksi", use_container_width=True)
+                            # Tampilkan gambar hasil deteksi
+                            st.image(hasil[0].plot(), caption="Hasil Deteksi", use_container_width=True)
 
 
-                except Exception as e :
-                    st.error("gambar tidak dapat terdeteksi")
-                    st.error(f"Error:{e}")
+                    except Exception as e :
+                        st.error("gambar tidak dapat terdeteksi")
+                        st.error(f"Error:{e}")
 
-                #hapus file sementara
-                finally:
-                    shutil.rmtree(temp_dir,ignore_errors=True)
+                    #hapus file sementara
+                    finally:
+                        shutil.rmtree(temp_dir,ignore_errors=True)
 
 st.markdown(
 "<div style='text-align: center;' class='footer'>Program Skripsi @2026</div>",
