@@ -99,7 +99,7 @@ if cek_library():
                         confidence_dict = {nama: 0.0 for nama in semua_kelas}
                     
                         # Pastikan ada hasil deteksi
-                          if len(hasil[0].boxes) == 0:
+                        if len(hasil[0].boxes) == 0:
                              st.error("Gambar tidak dapat terdeteksi oleh model.")
                         else:
                             # Ambil hasil deteksi
